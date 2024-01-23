@@ -1,0 +1,10 @@
+   integer SKIP_MASKED_PAIRS
+   parameter (SKIP_MASKED_PAIRS=1)
+
+   integer INCLUDE_MASKED_PAIRS
+   parameter (INCLUDE_MASKED_PAIRS=2)
+
+   integer ONLY_MASKED_PAIRS
+   parameter (ONLY_MASKED_PAIRS=3)
+
+

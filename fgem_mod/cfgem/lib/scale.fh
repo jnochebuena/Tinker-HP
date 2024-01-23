@@ -1,0 +1,5 @@
+
+      double precision,parameter :: very_big_value=1.d20
+      double precision,parameter :: big_value=1.d10
+      double precision,parameter :: small_value=1.d-10
+      double precision,parameter :: very_small_value=1.d-20

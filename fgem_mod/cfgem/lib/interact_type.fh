@@ -1,0 +1,64 @@
+   integer HERM_OVERLAP_HERM
+   parameter (HERM_OVERLAP_HERM=1)
+
+   integer HERM_COULOMB_HERM
+   parameter (HERM_COULOMB_HERM=2)
+
+   integer H_COULOMB_H_MINUS_MP_COULOMB_MP
+   parameter (H_COULOMB_H_MINUS_MP_COULOMB_MP=3)
+
+   integer MPOLE_COULOMB_MPOLE
+   parameter (MPOLE_COULOMB_MPOLE=4)
+
+   integer MPOLE_COULOMB_MPOLE_MINUS_HERM
+   parameter (MPOLE_COULOMB_MPOLE_MINUS_HERM=5)
+
+   integer MPOLE_COULOMB_HERM
+   parameter (MPOLE_COULOMB_HERM=6)
+
+   integer HERM_COULOMB_MPOLE
+   parameter (HERM_COULOMB_MPOLE=7)
+
+   integer MPOLE_COULOMB_HERM_MINUS_MPOLE
+   parameter (MPOLE_COULOMB_HERM_MINUS_MPOLE=8)
+
+   integer HERM_MINUS_MPOLE_COULOMB_MPOLE
+   parameter (HERM_MINUS_MPOLE_COULOMB_MPOLE=9)
+
+   integer COULOMB_COMPACT
+   parameter (COULOMB_COMPACT=1)
+
+   integer COULOMB_SPLIT
+   parameter (COULOMB_SPLIT=2)
+
+   integer COULOMB_COUNTERION
+   parameter (COULOMB_COUNTERION=4)
+
+   integer COULOMB_CO_ION
+   parameter (COULOMB_CO_ION=8)
+
+   integer OVERLAP_COMPACT
+   parameter (OVERLAP_COMPACT=16)
+
+   ! method of calculating
+   integer :: NO_SPLIT,SPLIT_DIRECT,SPLIT_RECIP
+   parameter (NO_SPLIT=1)
+   parameter (SPLIT_DIRECT=2)
+   parameter (SPLIT_RECIP=3)
+
+   integer :: COMPACT_with_COMPACT,ALL_but_COMPACT_with_COMPACT,ALL_with_ALL
+   parameter (COMPACT_with_COMPACT=1)
+   parameter (ALL_but_COMPACT_with_COMPACT=2)
+   parameter (ALL_with_ALL=3)
+
+   integer COULOMB_ene_type
+   parameter (COULOMB_ene_type=1)
+   integer OVERLAP_ene_type
+   parameter (OVERLAP_ene_type=2)
+
+   integer PRIMTYPE_COMPACT
+   parameter (PRIMTYPE_COMPACT=1)
+   integer PRIMTYPE_DIFFUSE
+   parameter (PRIMTYPE_DIFFUSE=2)
+   integer PRIMTYPE_NOINTERACT
+   parameter (PRIMTYPE_NOINTERACT=3)

@@ -1,0 +1,31 @@
+ ----------------------------------------
+ tot_mpole_mpole_ene =   0.47753431699906201     
+ tot_mpole_herm_ene =  -0.96987650147514515     
+ tot_herm_herm_ene =   0.48814892288696954     
+ tot_coulomb_ene =   -4.1932615891013825E-003  in kcals =   -2.6313113752829462     
+
+ field ene is   -4.1953606423318513E-003 in kcals   -2.6326285510720768     
+ ----------------------------------------
+ mpole-mpole components: 
+ cutoff_mpole_mpole_ene =    5.2248059555237703E-003
+ recip_mpole_mpole_ene =    47.695729166429615     
+ wigner_mpole_mpole_ene =   -5.8192000122517053E-002
+ correct_recip_mpole_mpole_ene =   -13.859878364597449     
+ self_mpole_mpole_ene =   -33.305349290666108     
+ ----------------------------------------
+ mpole-herm components: 
+ cutoff_mpole_herm_ene =   -1.2914067360580903E-002
+ recip_mpole_herm_ene =   -90.340725413044154     
+ wigner_mpole_herm_ene =   0.10495327035489610     
+ correct_recip_mpole_herm_ene =    22.035568025954476     
+ self_mpole_herm_ene =    67.243241682620237     
+ ----------------------------------------
+ herm-herm components: 
+ cutoff_herm_herm_ene =    6.1765682465383708E-003
+ recip_herm_herm_ene =    43.355499181947870     
+ wigner_herm_herm_ene =   -4.7309364574679415E-002
+ correct_recip_herm_herm_ene =   -7.8205887171073858     
+ self_herm_herm_ene =   -35.005628745625380     
+ ----------------------------------------
+ tot_exchange_ene =    1.2328136104808002E-003  in kcals =   0.77360222059433714     
+ field ene is    1.2328136104808002E-003 in kcals   0.77360222059433714     
