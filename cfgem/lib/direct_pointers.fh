@@ -1,0 +1,10 @@
+   include  "mpole_sizes.fh"
+
+   integer t_part(MAXMPG),u_part(MAXMPG),v_part(MAXMPG)
+   common/cfgem_tuv_parts/t_part,u_part,v_part
+
+   integer hermite_order_from_level(0:5)
+   common/cfgem_hermite_order/hermite_order_from_level
+
+   integer p_xder(MAXMP),p_yder(MAXMP),p_zder(MAXMP)
+   common/cfgem_grad_pointers/p_xder,p_yder,p_zder

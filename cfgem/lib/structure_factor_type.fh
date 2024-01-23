@@ -1,0 +1,1 @@
+   integer, parameter :: SF_PME=1,SF_FFP=2,SF_EWALD=3
