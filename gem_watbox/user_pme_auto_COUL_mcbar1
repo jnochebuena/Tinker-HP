@@ -1,0 +1,11 @@
+ &user
+  gaussian_extent_tol=1.0d-8,
+  gaussian_recip_tol=1.d-9,
+  CD_split_expon = 0.29,
+  Bspline_order_for_grid_type=6,
+  nfft1_for_grid_type=54,
+  nfft2_for_grid_type=54,
+  nfft3_for_grid_type=54,
+  do_coulomb=1,
+  unit_cell_length = 18.7,18.7,18.7
+ /

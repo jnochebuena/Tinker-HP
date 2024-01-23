@@ -1,0 +1,24 @@
+#!/bin/bash -f
+#PBS -q gac.cpu
+#PBS -l nodes=1:ppn=20
+#PBS -N watersmall_GAC
+
+module purge 
+module load mvapich2/gnu/ib/2.2 
+
+#cd /home/gac0111/RESEARCH/test
+cd $PBS_O_WORKDIR
+
+#mpirun -np 20 /home/gac0111/PROGRAMS/amber18/bin/pmemd.gem.MPI -O -i mdin.3 \
+#mpirun -np 20 /home/sn0444/programmes/sehr/amber18/bin/pmemd.gem.MPI -O -i mdin.3 \
+#mpirun -np 20 /home/sn0444/programmes/andres/amber18/src/pmemd.gem.amber18.patch1/bin/pmemd.gem.MPI -O -i mdin.3 \
+mpirun -np 20 /home/sn0444/programmes/andres/amber18/src/rduke/pmemd.gem.amber18.patch1/bin/pmemd.gem.MPI -O -i mdin.3 \
+                  -o mdout.3  \
+                  -p prmtop_GACFit \
+                  -c restrt.3 \
+                  -r restrt.4 \
+                  -x mdcrd.4 \
+                  -gem_aux AVG_A4_Analytic \
+                  -gem_crd equil_216_wat.crd \
+                  -gem_lst just_atoms_list
+rm mdinfo

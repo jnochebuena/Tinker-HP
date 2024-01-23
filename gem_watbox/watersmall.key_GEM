@@ -1,0 +1,25 @@
+parameters              waterGEM
+#integrator             RESPA
+verbose
+a-axis                  18.643
+vdw-cutoff              7.0
+neighbor-list
+ewald
+ewald-cutoff            7.0
+neighbor-list
+thermostat              BERENDSEN
+barostat                MONTECARLO
+archive
+#pme-procs 1
+USE-GEM
+DELTA-HALGREN           0.0
+GAMMA-HALGREN           0.12
+GEMAUX                  NEW_FIT_Coefs_A2_augcc
+GEMAUXEXCH              NEW_FIT_Coefs_A2_augcc
+GEMCRD                  equil_216_wat.crd
+GEMLIST                 just_atoms_list
+GEMCOUL                 user_pme_auto_COUL
+GEMEXCH                 user_pme_auto_EXCH
+#randomseed 123
+#polar-alg 1
+#nlupdate 1
