@@ -4,13 +4,7 @@ Tinker-HP: High-Performance Massively Parallel Evolution of Tinker on CPUs & GPU
 
 # News
 ___
-- **Update 08/2023:** integration of Quantum-HP for Nuclear Quantum Effects (NQE) through RPMD and (ad)QTB methods. Check the [*Quantum-HP paper*](https://doi.org/10.1021/acs.jctc.2c01233) (J. Chem. Theory Comput. 2023, 19, 5, 1432–1445)
-- **Update 02/2023:** support for neural networks potentials (ANI-2X, DeepMD etc...) is available. Check the [*Deep-HP module paper*](https://doi.org/10.1039/D2SC04815A) (Chem. Sci., 2023,14, 5438-5452)
-- **Update 02/2023:** support for the **AMOEBA+** potential now available
-- **Update 10/2022:** **New website for Tinker-HP**, check it out ! https://tinker-hp.org
-- **Update 02/2021:** **PLUMED** Support for version 1.2 GPUs
-- **Update 11/2021:** **PLUMED** Support for version 1.2 (CPUs)
-- **Update 24/2020:** all versions have been pushed to GitHub
+- **Update 01/2024:** Gaussian Electrostatic Model (GEM) integration
 
 _____  
 _____
