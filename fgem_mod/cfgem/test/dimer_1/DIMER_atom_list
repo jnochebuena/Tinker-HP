@@ -1,0 +1,56 @@
+atom_sitelist
+num_atoms       6
+atom_number     site_number
+    1               1
+    2               2
+    3               3
+    4               4
+    5               5
+    6               6
+sitelist
+numsites        6
+numframes       6
+site_number     site_type       molnum          frame_number    name
+    1           2                  1                1           O  
+    2           1                  1                2           H1 
+    3           1                  1                3           H2 
+    4           2                  2                4           O  
+    5           1                  2                5           H1 
+    6           1                  2                6           H2 
+center_weight_list
+numlist             0
+frame_axes      3       1       2               Z-then-X-then-Y
+regular_framelist
+num_framelist   14
+tail            head            frame_num       defpt_num       numdefvecs
+    1               2               1           1               2
+    1               3               1           1               2
+    1               2               1           2               1
+    2               1               2           1               1
+    2               3               2           2               1
+    3               1               3           1               1
+    3               2               3           2               1
+    4               5               4           1               2
+    4               6               4           1               2
+    4               5               4           2               1
+    5               4               5           1               1
+    5               6               5           2               1
+    6               4               6           1               1
+    6               5               6           2               1
+extrapt_framelist
+num_framelist      0
+extra_pts_list
+num_list           0
+site_mask_list
+    1   3
+    2   3
+    3   3
+    4   3
+    5   3
+    6   3
+    1       2       3
+    1       2       3
+    1       2       3
+    4       5       6
+    4       5       6
+    4       5       6

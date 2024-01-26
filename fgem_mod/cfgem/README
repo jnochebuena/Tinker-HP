@@ -1,0 +1,79 @@
+CFGEM - A package for evaluating GEM coulomb and exchange energies and forces
+        at a single point in time, callable from other force field code.
+
+Components:
+
+lib - The library source that builds libcfgem.a and cfgem_libmod.mod.  You will
+      link against the .a and compile against the .mod.
+
+drvr - Sample "test drive" code that shows how to use the library in your code.
+
+test - Two test cases, with sample outputs, one for two waters and one for
+       1024 waters.
+
+Building:
+
+Makefiles are provided for using gfortran.
+
+cd lib
+make clean  (I always do this in case there are any dependency issues)
+make
+
+- There will be output warning about some archaic fft code - no cause for
+  concern (I believe the fft's were originally from netlib).
+
+cd ../drvr
+make clean  (I always do this in case there are any dependency issues)
+make
+
+cd ../test/dimer_1
+./run_cfgem_drvr <date or whatever desc>
+(should run in msec)
+
+cd ../1024_wat_nvt_newprms
+./run_cfgem_drvr <date or whatever desc>
+(should run in roughly 10 sec)
+
+Coding your app:
+
+- Look at the drvr source.  The cfgem_coul() and cfgem_exch() are well described
+  in comments in the cfgem.f90 source.
+
+Building your app:
+
+- Simply set up a file analogous to drvr, or refer to the lib archive/mod in a
+  fashion similar to what is done in the drvr Makefile
+
+Further comments on input files:
+
+- The -aux file describes the mpole/hermite parameters.
+
+- The -crd input if fairly flexible, as long as the field count/type
+  matches. I provided fairly high precision input to duplicate some pmemd.gem
+  output.
+
+- The -list input is a description of atom mpole/hermite frames, etc.
+
+- Basically, you need to know how to build a gem model to change any of the
+  above files, and that activity is not supported here..
+
+- The -user_coul and -user_exch files provide user-settable parameters for a
+  run for the cfgem_coul() and cfgem_exch() respectively.  If you are familiar
+  with fgem, the user parameters here are only a subset of parameters
+  available in fgem.  The cfgem library is only intended to do pme coulomb
+  evaluation and direct space exchange evaluation.  The input parameters are
+  fairly typical of other pme program inputs; start with values shown.  The
+  nfftx grid counts are sufficient for the unit cell size, if you run larger
+  boxes, you must provide sufficiently higher grid counts to maintain
+  density, and must follow rc fft rules - nfft1 must contain a prime factor of 2  and only other prime factors of 3,5, and nfft2 and nfft3 must contain some
+  combo of prime factors of 2,3,5.
+
+  NOTE that unit_cell_length() and exchange_cutoff are in Angstrom.
+  In general, most inputs are converted from Bohr to Angstrom for use in the
+  code.
+
+Testing done with pmemd.gem:
+
+- We built a version of pmemd.gem that used cfgem() on the two test cases and
+  results match.  We evaluated forces in the pmemd.gem runs and they were
+  identical to 12 decimals.

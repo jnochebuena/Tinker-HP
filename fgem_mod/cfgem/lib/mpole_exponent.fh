@@ -1,0 +1,2 @@
+
+      double precision,parameter :: MPOLE_exponent=1.d20

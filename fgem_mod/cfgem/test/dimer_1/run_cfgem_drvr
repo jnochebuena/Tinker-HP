@@ -1,0 +1,7 @@
+# Enter output file identifier as only argument..
+
+../../drvr/cfgem_drvr -aux NEW_FIT_Coefs_A2_augcc \
+                      -crd 20.crd \
+                      -list DIMER_atom_list \
+                      -user_coul user_pme_auto_COUL \
+                      -user_exch user_pme_auto_EXCH > cfgem_drvr.$1.out
