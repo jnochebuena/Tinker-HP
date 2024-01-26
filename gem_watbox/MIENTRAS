@@ -1,0 +1,11 @@
+
+en ehalgem:
+
+eps = epsilon(kt,it)
+                  if (iv14(kglob) .eq. iglob) then
+                     rv = radmin4(kt,it)
+                     eps = epsilon4(kt,it)
+                  end if
+                  eps = eps * vscale(kglob)
+
+tengo que hacer que rv y eps correspondan a mis valores de GEM*
