@@ -95,7 +95,6 @@
       ! GAC the TINKER crds in GEM arrays were put in BEEMAN
          atom_cnt = n
 
-
       ! zero out coulomb energy and derivs
       em = 0.d0
       dem = 0d0
@@ -126,12 +125,14 @@
       !enddo
       ! print *,aux_file, list_file, user_coul_file
       ! print *,atom_cnt, free_lun, out_lun
+
       call cfgem_coul(aux_file, list_file, user_coul_file, &
                    atom_cnt, atom_crds, free_lun, out_lun, &
                    cfgem_tot_coul_ene, &
                    cfgem_coul_ene_fld, &
                    cfgem_coul_frc,&
                    pbc_box_size)
+      
 
       ! don't need all the _ene structs for detailed info
       !call cfgem_coul(aux_file, list_file, user_coul_file, &
@@ -156,7 +157,7 @@
       !dem(:,:) = dem(:,:) + (cfgem_coul_frc(:,:)*au_to_kcal_ang*-1.d0)
       do k=1,3
        do h = 1,atom_cnt
-         dem(k,h)=dem(k,h)+(cfgem_coul_frc(k,h)*au_to_kcal_ang*-1.d0)
+         dem(k,h)=dem(k,h)+(cfgem_coul_frc(k,h)*au_to_kcal_ang*(-1.d0))
        enddo 
       enddo 
 
@@ -231,7 +232,7 @@
       !dem(:,:) = dem(:,:) + (cfgem_exch_frc(:,:)*au_to_kcal_ang*-1.d0)
       do k=1,3
        do h = 1,atom_cnt
-         dem(k,h)=dem(k,h)+(cfgem_exch_frc(k,h)*au_to_kcal_ang*-1.d0)
+         dem(k,h)=dem(k,h)+(cfgem_exch_frc(k,h)*au_to_kcal_ang*(-1.d0))
        enddo 
       enddo 
 

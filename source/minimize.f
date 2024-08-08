@@ -24,6 +24,9 @@ c
       use scales
       use usage
       use mpi
+c     S:JORGE
+      use mdstuf, only: useGEM
+c     E:JORGE
       implicit none
       integer i,j,imin,ierr
       integer next,freeunit,nthreadsupport
@@ -102,6 +105,13 @@ c
       end if
       if (grdmin .le. 0.0d0)  grdmin = 0.01d0
 c
+c     S:JORGE
+         if (useGEM) then
+            print *
+            print *,'Found USE-GEM, using GEM for Coul/Exch'
+          end if
+c     E:JORGE
+c
 c     write out a copy of coordinates for later update
 c
       imin = freeunit ()
@@ -165,6 +175,12 @@ c         call commstep
          call mechanicstep(0)
          call allocstep
          call nblist(0)
+c        S:JORGE
+         if (useGEM) then
+            if (rank .eq. 0) call geminit
+            call allocstep
+         end if
+c        E:JORGE
          call gradient (minimum,derivs)
          call MPI_ALLREDUCE(MPI_IN_PLACE,minimum,1,MPI_REAL8,
      $    MPI_SUM,COMM_TINKER,ierr)
@@ -270,6 +286,9 @@ c
       use scales
       use usage
       use mpi
+c     S:JORGE
+      use mdstuf, only: useGEM
+c     E:JORGE
       implicit none
       integer i,iglob,ierr
       real*8 minimiz1,e
@@ -313,6 +332,10 @@ c
 c     compute and store the energy and gradient
 c
 c      if (analytic) then
+         if (useGEM) then
+            if (rank .eq. 0) call geminit
+            call allocstep
+          end if
          call gradient (e,derivs)
          call commforces(derivs)
 c      else

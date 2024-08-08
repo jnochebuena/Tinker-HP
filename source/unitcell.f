@@ -162,7 +162,7 @@ c
       ! GAC fail safe to make sure box is orthogonal
       if (useGEM) then
          if (.not. orthogonal) then
-            write(iout,*),'GEM can only use rectangular boxes, exiting'
+            write(iout,*) 'GEM can only use rectangular boxes, exiting'
             call fatal
          endif
       endif

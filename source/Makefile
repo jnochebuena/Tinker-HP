@@ -177,7 +177,7 @@ libtinker: $(MODS) $(OBJS)
 %.o: %.f90
 	$(RunF77) $(FFLAGS) -c $*.f90 $(FFTDECOMP)
 %.o: %.F90
-	$(RunF77) -c $*.F90 $(CFGEM)
+	$(RunF77) $(FFLAGS) -c $*.F90 $(CFGEM)
 ### GAC: have to make CFGEM here?
 #
 clean:

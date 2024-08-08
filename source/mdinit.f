@@ -131,7 +131,7 @@ c
 !!! GAC start
          else if (keyword(1:8) .eq. 'USE-GEM ') then
             useGEM = .true.
-            write(iout,*),'Found USE-GEM, using GEM for Coul/Exch'
+            write(iout,*) 'Found USE-GEM, using GEM for Coul/Exch'
 !!! GAC end
          else if (keyword(1:14) .eq. 'POLAR-PREDICT ') then
             use_pred = .true.
